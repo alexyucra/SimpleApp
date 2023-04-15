@@ -1,4 +1,5 @@
 /angular-http/*.*
+/angular-http/src
 /frontapi/.angular
 /frontapi/.vscode
 /frontapi/node_modules
