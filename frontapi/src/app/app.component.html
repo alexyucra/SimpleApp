@@ -1,0 +1,63 @@
+
+<!--  init code -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">SimpleApp</li>
+  </ol>
+</nav>
+
+<div class="container">
+  
+  <div class="card add-emp">
+    <h5 class="card-header">Inserir/Alterar empresa</h5>
+    <div class="card-body">
+      <form id="add-form" (ngSubmit)="f.form.valid && inserirEmpresa(f)" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome: </label>
+          <input type="text" [(ngModel)]="empresa.nome" id="nome" name="nome" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" placeholder="Digite o nome">
+          <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+              <div *ngIf="nome.errors">Nome é obrigatório</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Description: </label>
+          <input type="text" [(ngModel)]="empresa.descricao" id="descricao" name="descricao" #descricao="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && descricao.invalid }" placeholder="Digite a descrição">
+          <div *ngIf="f.submitted && descricao.invalid" class="invalid-feedback">
+              <div *ngIf="descricao.errors">Descrição é obrigatória</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-add-emp">Salvar</button>
+        <button type="reset" class="btn btn-secondary btn-add-emp" (click)="limparForm(f)">Cancelar</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="card list-emp">
+    <h5 class="card-header">Lista de empresas</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empresa of empresas">
+              <td>{{empresa.id}}</td>
+              <td>{{empresa.nome}}</td>
+              <td>{{empresa.descricao}}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="alterarEmpresa(empresa)">Alterar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="excluirEmpresa(empresa)">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
+
+<!--  end code -->

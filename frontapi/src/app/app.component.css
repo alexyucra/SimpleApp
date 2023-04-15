@@ -1,0 +1,135 @@
+.container {
+    margin-top: 30px;
+}
+
+.add-emp {
+    margin-bottom: 30px;
+}
+
+.list-emp {
+    margin-bottom: 50px;
+}
+
+.btn-add-emp {
+    margin-right: 10px;
+}
+
+
+/* Media queries for responsive layout */
+
+@media screen and (min-width: 768px) {
+    /* Use a two-column layout for screens larger than 768px */
+    li {
+        flex-direction: row;
+    }
+  
+    li div {
+        margin-right: 1rem;
+    }
+    
+  }
+
+@media screen and (max-width: 576px) {
+    /* Use a one-column layout for screens smaller than 576px */
+    .btn-add-emp {
+        margin: 5px;
+    }
+    li {
+        flex-direction: column;
+    }
+  
+    li div {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+      
+    li {
+        margin: 0 0 1rem 0;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+      
+    li button {
+        margin-top: 1rem;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    form input {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+      
+    form button {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    
+    .table {
+        display: table;
+        width: 100%;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody {
+        display: block;
+        width: 100%;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+    }
+    
+    .table tbody td {
+        display: block;
+        text-align: center;
+    }
+    
+    .table tbody td::before {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-th);
+    }
+    
+    .table tbody td:last-child {
+        margin-bottom: 0;
+    }
+  }
